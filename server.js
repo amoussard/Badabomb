@@ -2,7 +2,7 @@ var http = require('http');
 var md5 = require('MD5');
 
 httpServer = http.createServer(function (request, response) {
-}).listen(8080, "nodejs.test");
+}).listen(1337);
 console.log('Server running at http://nodejs.test/');
 
 

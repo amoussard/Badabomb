@@ -5,7 +5,7 @@
     $('#msgtpl').remove();
 
     // Connexion au serveur
-    var socket = io.connect('http://nodejs.test:8080');
+    var socket = io.connect('http://localhost:1337');
 
     $("#loginform").submit(function (event) {
         event.preventDefault();
