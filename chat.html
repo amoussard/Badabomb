@@ -1,0 +1,99 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+    #users, #messages, #form {
+        display:none;
+    }
+    #users {
+        width: 60px;
+        position: fixed;
+        height: 95%;
+        background-color: #555;
+        border-right: 2px solid black;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+    #users img {
+        margin: 5px;
+    }
+    #messages {
+        margin-left: 60px;
+    }
+    #messages .message {
+        border: 1px solid black;
+        position: relative;
+    }
+    #messages .message img {
+        float: left;
+        margin: 3px;
+        width: 30px;
+    }
+    #messages .message .info {
+        margin: 3px;
+        margin-left: 40px;
+    }
+    #messages .message .info .date {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+    #messages .sep {
+        margin: 10px;
+    }
+    #form {
+        width: 100%;
+        height: 5%;
+        position: fixed;
+        bottom: 0;
+        left:0;
+        margin: 0;
+        border-top: 2px solid black;
+        background-color: #555;
+        padding-left: 60px;
+    }
+    #message {
+        height: 100%;
+        width: 92%;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+<body>
+
+    <div id="users">
+    </div>
+    <div id="messages">
+        <div class="message" id="msgtpl" style="display:none;">
+            <img src="{{{user.avatar}}}">
+            <div class="info">
+                <p><strong>{{user.username}}</strong></p>
+                <p>{{message}}</p>
+                <span class="date">{{h}}:{{m}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="login">
+        <form action="" id="loginform">
+            <h1>Bienvenue</h1>
+            <p>Ceci est un test de tchat pour Node.JS, entrez votre pseudo et votre email (utilis&eacute; pour l'avatar gravatar)</p>
+            <input type="text" name="login" id="username" placeholder="Nom d'utilisateur">
+            <input type="mail" name="mail" id="mail" placeholder="E-mail">
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+
+    <form action="" id="form">
+        <input type="text" id="message" class="text"/>
+        <input type="submit" id="send" value="Envoyer" class="submit"/>
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/lib/mustache.js"></script>
+    <script src="http://nodejs.test:8080/socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
