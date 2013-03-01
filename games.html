@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Parties</h1>
+
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="games.html">Parties</a></li>
+    </ul>
+
+    <h2>Parties</h2>
+    <ul id="games">
+        <li class="game" id="tplGame" style="display:none;">
+            Partie de {{id}}
+            <a href="game.php?idGame={{id}}">Rejoindre</a>
+        </li>
+        <li class="game loader" id="loader">Loader</li>
+    </ul>
+    <a href="game.php">Créer une partie</a>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/lib/mustache.js"></script>
+    <script src="http://localhost:1338/socket.io/socket.io.js"></script>
+    <script src="js/games.js"></script>
+</body>
+</html>
